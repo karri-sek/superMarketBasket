@@ -1,5 +1,7 @@
 import React from 'react'
-
-const ProductItem = () => <div></div>
+import products from '../../products';
+const ProductItem = () => (
+    products.map(product=><div key={product.name}>{product.name}</div>)
+)
 
 export default ProductItem;
