@@ -10,6 +10,7 @@ const Product = () => (
                 key={product.id}
                 product={product}
                 addToBasket={() => {}}
+                removeFromBasket={() => {}}
             />
         ))}
     </div>

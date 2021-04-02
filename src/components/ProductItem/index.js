@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-const ProductItem = ({ product, addToBasket }) => {
+const ProductItem = ({ product, addToBasket, removeFromBasket }) => {
     const { name, price } = product
     return (
         <div className="flexRow">
@@ -12,12 +12,19 @@ const ProductItem = ({ product, addToBasket }) => {
             >
                 Add to Basket
             </button>
+            <button
+                className="removeFromBasketButton"
+                onClick={removeFromBasket(product)}
+            >
+                Remove from Basket
+            </button>
         </div>
     )
 }
 ProductItem.propTypes = {
     product: PropTypes.object.isRequired,
     addToBasket: PropTypes.func.isRequired,
+    removeFromBasket: PropTypes.func.isRequired,
 }
 
 export default ProductItem
