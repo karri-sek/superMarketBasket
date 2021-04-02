@@ -29,8 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test:coverage": "yarn test --coverage",
-    "prettier": "prettier --config .prettierrc 'src/*.js' --write",
-    "lint": "eslint src/*.js",
+    "prettier": "prettier --config .prettierrc 'src/**/*.js' --write",
+    "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/*.js && eslint --ext .js --fix",
     "husky-pre-commit": "yarn prettier && yarn lint && yarn lint-fix && yarn test && yarn test:coverage"
   },
