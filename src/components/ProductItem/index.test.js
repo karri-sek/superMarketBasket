@@ -8,12 +8,11 @@ describe('Product Item', () => {
     beforeEach(() => {
         defaultProps = {
             addToBasket: jest.fn(() => {}),
-            product: {},
+            product: { name: 'Face Masks', price: 2.5 },
             removeFromBasket: jest.fn(() => {}),
         }
     })
     it('Product Item component should have face mask item', () => {
-        defaultProps.product = { name: 'Face Masks', price: 2.5 }
         render(<ProductItem {...{ ...defaultProps }} />)
         expect(screen.getByText('Face Masks')).toBeInTheDocument()
         expect(screen.getByText('2.5')).toBeInTheDocument()
