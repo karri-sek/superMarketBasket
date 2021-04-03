@@ -1,7 +1,7 @@
 import supermarket from './supermarket'
 
 describe('supermarket reducer', () => {
-    test('initial state should be empty wit', () => {
+    test('initial state should be empty', () => {
         expect(supermarket({}, {})).toEqual({})
     })
     describe('ADD_TO_BASKET:', () => {
@@ -65,7 +65,7 @@ describe('supermarket reducer', () => {
                 basketItems: [{ id: 2, name: 'Toilet Paper', price: 4.5 }],
             }
             const expectedState = {
-                basketItems: [{ id: 2, name: 'Toilet Paper', price: 4.5 }]
+                basketItems: [{ id: 2, name: 'Toilet Paper', price: 4.5 }],
             }
             expect(supermarket(initialState, action)).toEqual(expectedState)
         })

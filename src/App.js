@@ -1,10 +1,11 @@
 import React from 'react'
 import { Container } from '@material-ui/core'
+import Product from './components/Product'
 import './App.css'
 
 const App = () => (
     <Container>
-        <div className="App">learn react</div>
+        <Product />
     </Container>
 )
 
