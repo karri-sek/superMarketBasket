@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Total = ({subTotal}) => (
+const Total = ({ subTotal }) => (
     <div className="TotalFlexContainer">
         <div className="totalFlexItem">
             <label>Sub-total</label>

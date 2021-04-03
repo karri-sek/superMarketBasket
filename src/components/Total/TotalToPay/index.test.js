@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render } from '../../../test-utils'
 import TotalToPay from '.'
 
 describe('TotalToPay', () => {
@@ -10,7 +10,7 @@ describe('TotalToPay', () => {
         }
     })
     test('Total to pay component should render with total to pay and value', () => {
-        const { getByText } = render(<TotalToPay {...{ ...defaultProps }}/>)
+        const { getByText } = render(<TotalToPay {...{ ...defaultProps }} />)
         expect(getByText(/Total to Pay/i)).toBeInTheDocument()
         expect(getByText(/10.75/i)).toBeInTheDocument()
     })
