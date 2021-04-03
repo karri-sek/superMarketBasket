@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from './test-utils'
 import App from './App'
 
 describe('App js component', () => {
@@ -33,5 +33,11 @@ describe('App js component', () => {
             /Remove from Basket/i
         )
         expect(buttonItemsWithText).toHaveLength(3)
+    })
+    describe('Basket component from App component', () => {
+        test('The app component should have the Basket component', () => {
+            const { getByText } = render(<App />)
+            expect(getByText('Basket')).toBeInTheDocument()
+        })
     })
 })

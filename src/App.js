@@ -1,12 +1,13 @@
 import React from 'react'
-import { Container } from '@material-ui/core'
 import Product from './components/Product'
+import Basket from './components/Basket'
 import './App.css'
 
 const App = () => (
-    <Container>
+    <>
         <Product />
-    </Container>
+        <Basket />
+    </>
 )
 
 export default App
