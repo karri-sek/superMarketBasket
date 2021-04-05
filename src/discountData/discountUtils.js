@@ -16,7 +16,7 @@ export const createSavingObjects = (
     { description, discountValue }
 ) => {
     const savingObjects = []
-    for (const d of [...Array(discountQuantity).keys()])
+    for (const d of [...Array(Math.floor(discountQuantity)).keys()])
         savingObjects.splice(d, 0, {
             description: description,
             value: discountValue,
@@ -25,6 +25,7 @@ export const createSavingObjects = (
 }
 
 export const getSavings = (itemQuantity = {}) => {
+    console.log(' itemQuantity ', itemQuantity)
     const savings = []
     Object.entries(itemQuantity).map(([key, value]) => {
         const item = getDiscountObj(key)
