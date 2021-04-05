@@ -13,9 +13,11 @@ describe('Total', () => {
         }
     })
     test('Total component should render with Sub-total text element', () => {
-        const { getByText } = render(<Total {...{ ...defaultProps }} />)
+        const { getByText, getAllByText } = render(
+            <Total {...{ ...defaultProps }} />
+        )
         expect(getByText(/Sub-total/i)).toBeInTheDocument()
-        expect(getByText(/21/i)).toBeInTheDocument()
+        expect(getAllByText(/21/i)).toHaveLength(2)
     })
     test('Total component should render 0 when basketItems is empty', () => {
         defaultProps.basketItems = []
@@ -23,6 +25,6 @@ describe('Total', () => {
             <Total {...{ ...defaultProps }} />
         )
         expect(getByText(/Sub-total/i)).toBeInTheDocument()
-        expect(getAllByText(/0/i)).toHaveLength(2)
+        expect(getAllByText(/0/i)).toHaveLength(3)
     })
 })

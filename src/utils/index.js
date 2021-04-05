@@ -6,7 +6,9 @@ export const removeBasketItem = (a = [], p = {}) => {
 const reducer = (accumulator, currentValue) => accumulator + currentValue
 
 export const getSubTotal = (basketItems = []) =>
-    basketItems.map((item) => item.price).reduce(reducer)
+    isEmpty(basketItems)
+        ? 0
+        : basketItems.map((item) => item.price).reduce(reducer)
 
 export const isEmpty = (value) =>
     value === undefined ||
