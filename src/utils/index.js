@@ -7,3 +7,10 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue
 
 export const getSubTotal = (basketItems = []) =>
     basketItems.map((item) => item.price).reduce(reducer)
+
+export const isEmpty = (value) =>
+    value === undefined ||
+    value === null ||
+    (typeof value === 'string' && value.trim() === '') ||
+    (value instanceof Array && value.length === 0) ||
+    (typeof value === 'object' && Object.keys(value).length === 0)
