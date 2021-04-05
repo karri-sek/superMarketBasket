@@ -1,8 +1,10 @@
 import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from '../actions'
+import { removeBasketItem } from '../utils/index'
 
 const initialState = {
     basketItems: [],
 }
+
 const supermarket = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_BASKET:
@@ -13,8 +15,9 @@ const supermarket = (state = initialState, action) => {
         case REMOVE_FROM_BASKET:
             return {
                 ...state,
-                basketItems: state.basketItems.filter(
-                    (bItem) => bItem.id !== action.product.id
+                basketItems: removeBasketItem(
+                    state.basketItems,
+                    action.product
                 ),
             }
         default:

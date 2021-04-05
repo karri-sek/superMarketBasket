@@ -56,7 +56,7 @@ describe('supermarket reducer', () => {
             }
             expect(supermarket(initialState, action)).toEqual(expectedState)
         })
-        test('product id not matched then existing basketItems should not be altered', () => {
+        test('when the items are not matched then existing basketItems should not be altered', () => {
             const action = {
                 type: 'REMOVE_FROM_BASKET',
                 product: { id: 1, name: 'Face Masks', price: 2.5 },
@@ -66,6 +66,26 @@ describe('supermarket reducer', () => {
             }
             const expectedState = {
                 basketItems: [{ id: 2, name: 'Toilet Paper', price: 4.5 }],
+            }
+            expect(supermarket(initialState, action)).toEqual(expectedState)
+        })
+        test('When multiple product items matched by id it should remove the first find out element', () => {
+            const action = {
+                type: 'REMOVE_FROM_BASKET',
+                product: { id: 1, name: 'Face Masks', price: 2.5 },
+            }
+            const initialState = {
+                basketItems: [
+                    { id: 2, name: 'Toilet Paper', price: 4.5 },
+                    { id: 1, name: 'Face Masks', price: 2.5 },
+                    { id: 1, name: 'Face Masks', price: 2.5 },
+                ],
+            }
+            const expectedState = {
+                basketItems: [
+                    { id: 2, name: 'Toilet Paper', price: 4.5 },
+                    { id: 1, name: 'Face Masks', price: 2.5 },
+                ],
             }
             expect(supermarket(initialState, action)).toEqual(expectedState)
         })
