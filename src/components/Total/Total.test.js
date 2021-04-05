@@ -19,8 +19,10 @@ describe('Total', () => {
     })
     test('Total component should render 0 when basketItems is empty', () => {
         defaultProps.basketItems = []
-        const { getByText } = render(<Total {...{ ...defaultProps }} />)
+        const { getByText, getAllByText } = render(
+            <Total {...{ ...defaultProps }} />
+        )
         expect(getByText(/Sub-total/i)).toBeInTheDocument()
-        expect(getByText(/0/i)).toBeInTheDocument()
+        expect(getAllByText(/0/i)).toHaveLength(2)
     })
 })
