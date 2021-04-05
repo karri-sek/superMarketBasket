@@ -1,11 +1,12 @@
+import discounts from './discounts'
 export const getItemQuantity = (basketItems) =>
     basketItems.reduce(function (obj, b) {
         obj[b.id] = ++obj[b.id] || 1
         return obj
     }, {})
 
-export const getDiscountObj = (discountItem, productId) =>
-    discountItem.discountProductId === productId
+export const getDiscountObj = (pid) =>
+    discounts.filter((d) => d.discountProductId === pid)[0]
 
 export const getSavings = (itemQuantity = {}) => {
     const savings = []
