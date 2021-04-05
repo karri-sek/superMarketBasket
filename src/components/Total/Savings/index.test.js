@@ -7,8 +7,8 @@ describe('Savings', () => {
     beforeEach(() => {
         defaultProps = {
             savingItems: [
-                { id: 1, name: 'Face Masks 2 for £4', discountValue: 1.05 },
-                { id: 1, name: 'Toilet Paper 6 for 5', discountValue: 0.65 },
+                { id: 1, description: 'Face Masks 2 for £4', value: 1.05 },
+                { id: 1, description: 'Toilet Paper 6 for 5', value: 0.65 },
             ],
         }
     })

@@ -6,7 +6,7 @@ describe('SavingItem', () => {
     let defaultProps = null
     beforeEach(() => {
         defaultProps = {
-            savingItem: { name: 'Face Masks 2 for £4', discountValue: 1.05 },
+            savingItem: { description: 'Face Masks 2 for £4', value: 1.05 },
         }
     })
     test('SavingItem component should render with one saving item element', () => {

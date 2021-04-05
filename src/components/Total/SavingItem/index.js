@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const SavingItem = ({ savingItem }) => (
     <div className="savingFlexItem">
-        <label>{savingItem.name}</label>
-        <label>{savingItem.discountValue}</label>
+        <label>{savingItem.description}</label>
+        <label>{savingItem.value}</label>
     </div>
 )
 
