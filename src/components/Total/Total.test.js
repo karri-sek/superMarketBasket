@@ -1,7 +1,6 @@
 import React from 'react'
 import { render } from '../../test-utils'
-
-import Total from '.'
+import Total from './Total'
 
 describe('Total', () => {
     let defaultProps = null
@@ -17,5 +16,11 @@ describe('Total', () => {
         const { getByText } = render(<Total {...{ ...defaultProps }} />)
         expect(getByText(/Sub-total/i)).toBeInTheDocument()
         expect(getByText(/21/i)).toBeInTheDocument()
+    })
+    test('Total component should render 0 when basketItems is empty', () => {
+        defaultProps.basketItems = []
+        const { getByText } = render(<Total {...{ ...defaultProps }} />)
+        expect(getByText(/Sub-total/i)).toBeInTheDocument()
+        expect(getByText(/0/i)).toBeInTheDocument()
     })
 })
