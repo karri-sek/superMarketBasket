@@ -40,4 +40,14 @@ describe('App js component', () => {
             expect(getByText('Basket')).toBeInTheDocument()
         })
     })
+    describe('Total component on App Root component', () => {
+        test('The app component -  Total component with Sub-total label', () => {
+            const { getByText } = render(<App />)
+            expect(getByText('Sub-total')).toBeInTheDocument()
+        })
+        test('The app component - Total component with Savings label', () => {
+            const { getByText } = render(<App />)
+            expect(getByText('Savings')).toBeInTheDocument()
+        })
+    })
 })
