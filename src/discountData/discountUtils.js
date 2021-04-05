@@ -6,26 +6,34 @@ export const getItemQuantity = (basketItems) =>
     }, {})
 
 export const getDiscountObj = (pid) =>
-    discounts.filter((d) => d.discountProductId === pid)[0]
+    discounts.filter((d) => d.discountProductId === +pid)[0]
 
 export const qualifiedForDiscount = (quantity = 0, multiplesOf = 0) =>
     quantity / multiplesOf >= 1
+
+export const createSavingObjects = (
+    discountQuantity = 0,
+    { description, discountValue }
+) => {
+    const savingObjects = []
+    for (const d of [...Array(discountQuantity).keys()])
+        savingObjects.splice(d, 0, {
+            description: description,
+            value: discountValue,
+        })
+    return savingObjects
+}
 
 export const getSavings = (itemQuantity = {}) => {
     const savings = []
     Object.entries(itemQuantity).map(([key, value]) => {
         const item = getDiscountObj(key)
         if (item) {
-            const { multiplesOf, description, discountValue } = item
-        }
-        if (value / item.multiplesOf >= 1) {
-            ;[...Array(value / item.multiplesOf).keys()].map((i) =>
-                savings.push({
-                    description: item.description,
-                    value: item.discountValue,
-                })
-            )
+            const { multiplesOf } = item
+            if (qualifiedForDiscount(value, multiplesOf)) {
+                savings.push(...createSavingObjects(value / multiplesOf, item))
+            }
         }
     })
-    console.log(' savings r', savings)
+    return savings
 }
