@@ -1,4 +1,10 @@
-import { removeBasketItem, getSubTotal, isEmpty, getTotalSavingsValue } from './index'
+import {
+    removeBasketItem,
+    getSubTotal,
+    isEmpty,
+    getTotalSavingsValue,
+    getTotalToPayValue,
+} from './index'
 describe('Utils', () => {
     describe('removeBasketItem', () => {
         test('should return the empty array after removing the found out element', () => {
@@ -47,6 +53,11 @@ describe('Utils', () => {
             expect(getSubTotal(basketItems)).toEqual(21)
         })
     })
+    describe('getTotalToPayValue', () => {
+        test('given sub total and total savings value should give total to pay', () => {
+            expect(getTotalToPayValue(14.5, 4.5)).toEqual(10)
+        })
+    })
     describe('getTotalSavingsValue', () => {
         test('given savings array should return total saving value', () => {
             const savings = [
@@ -60,7 +71,7 @@ describe('Utils', () => {
                 { description: 'Toilet Paper 6 for 5', value: 0.65 },
                 { description: 'Toilet Paper 6 for 5', value: 0.65 },
             ]
-            expect(getTotalSavingsValue(savings)).toEqual(1.30)
+            expect(getTotalSavingsValue(savings)).toEqual(1.3)
         })
     })
     describe('isEmpty', () => {

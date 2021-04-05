@@ -25,7 +25,6 @@ export const createSavingObjects = (
 }
 
 export const getSavings = (itemQuantity = {}) => {
-    console.log(' itemQuantity ', itemQuantity)
     const savings = []
     Object.entries(itemQuantity).map(([key, value]) => {
         const item = getDiscountObj(key)
