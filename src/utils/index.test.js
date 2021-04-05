@@ -24,7 +24,7 @@ describe('Utils', () => {
         const product = { id: 3, name: 'face masks', price: 12.5 }
         expect(removeBasketItem(inputArray, product)).toEqual(inputArray)
     })
-    test('should return only one element from the array after finding that element by id', () => {
+    test('should remove only one element from the array after finding that element by id', () => {
         const inputArray = [
             { id: 1, name: 'face masks', price: 12.5 },
             { id: 2, name: 'HandSanitizer', price: 15.5 },
