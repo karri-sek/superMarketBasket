@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const Total = ({ subTotal }) => (
+import { getSubTotal } from '../../utils'
+const Total = ({ basketItems }) => (
     <div className="TotalFlexContainer">
         <div className="totalFlexItem">
             <label>Sub-total</label>
-            <label>{subTotal}</label>
+            <label>{getSubTotal(basketItems)}</label>
         </div>
     </div>
 )
 
 Total.propTypes = {
-    subTotal: PropTypes.number.isRequired,
+    basketItems: PropTypes.array.isRequired,
 }
 export default Total
