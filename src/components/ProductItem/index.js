@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { addToBasket, removeFromBasket } from '../../actions'
+
 const ProductItem = ({ product, addToBasket, removeFromBasket }) => {
     const { name, price } = product
     return (
@@ -8,13 +11,13 @@ const ProductItem = ({ product, addToBasket, removeFromBasket }) => {
             <label className="productPrice">{price}</label>
             <button
                 className="addToBasketButton"
-                onClick={addToBasket(product)}
+                onClick={() => addToBasket(product)}
             >
                 Add to Basket
             </button>
             <button
                 className="removeFromBasketButton"
-                onClick={removeFromBasket(product)}
+                onClick={() => removeFromBasket(product)}
             >
                 Remove from Basket
             </button>
@@ -27,4 +30,7 @@ ProductItem.propTypes = {
     removeFromBasket: PropTypes.func.isRequired,
 }
 
-export default ProductItem
+export default connect(null, {
+    addToBasket: (...args) => addToBasket(...args),
+    removeFromBasket: (...args) => removeFromBasket(...args),
+})(ProductItem)
