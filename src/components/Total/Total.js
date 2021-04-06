@@ -21,8 +21,8 @@ const Total = ({ basketItems }) => {
         <>
             <div className="flexContainer">
                 <div className="flexRow">
-                    <label className="productName">Sub-total</label>
-                    <label className="productPrice">
+                    <label className="productName bold">Sub-total</label>
+                    <label className="productPrice bold">
                         {isEmpty(basketItems) ? 0 : subTotal}
                     </label>
                 </div>
