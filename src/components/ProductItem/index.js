@@ -7,8 +7,8 @@ const ProductItem = ({ product, addToBasket, removeFromBasket }) => {
     const { name, price } = product
     return (
         <div className="flexRow">
-            <label className="productName">{name}</label>
-            <label className="productPrice">{price}</label>
+            <label className="productName name">{name}</label>
+            <label className="productPrice price">{price}</label>
             <button
                 className="addToBasketButton"
                 onClick={() => addToBasket(product)}

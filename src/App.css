@@ -23,7 +23,12 @@
 }
 .productPrice{
   padding: 10px;
-
+}
+.productName.name{
+   border-left: green 2px solid;
+}
+.productPrice .price{
+  padding: 10px;
 }
 
 .basketProductPrice{
