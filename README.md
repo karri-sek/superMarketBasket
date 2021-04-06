@@ -2,6 +2,9 @@
 
 This code base contains the implementation details about the Super Market Basket. Customers can able to add
 the items to Basket  or remove items from the Basket. 
+### Netlify URL 
+Open [https://sekhar-supermarket.netlify.app/](https://sekhar-supermarket.netlify.app/) to view it in the browser.
+
 ## Tech Stack
 
 React JS , Java Script , ES6
@@ -24,3 +27,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### Assumptions
+All the products are available to order in the multiple of 1 and remove by multiples of 1.
+
