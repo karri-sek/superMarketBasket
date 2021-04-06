@@ -3,7 +3,7 @@ import products from '../../products'
 import ProductItem from '../ProductItem'
 
 const Product = () => (
-    <div className="productsFlexContainer">
+    <div className="flexContainer">
         <div className="flexRowHeading">Super Market</div>
         <div className="flexRowControlHeading">
             <label>Product</label>
