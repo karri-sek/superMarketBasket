@@ -15,6 +15,7 @@ const ProductItem = ({ product, addToBasket, removeFromBasket }) => {
             >
                 Add to Basket
             </button>
+
             <button
                 className="removeFromBasketButton"
                 onClick={() => removeFromBasket(product)}
