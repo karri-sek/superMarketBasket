@@ -18,19 +18,21 @@ const Total = ({ basketItems }) => {
     const subTotal = getSubTotal(basketItems)
     const totalToPay = getTotalToPayValue(subTotal, totalSavings)
     return (
-        <div className="flexContainer">
-            <div className="flexRow">
-                <label className="productName">Sub-total</label>
-                <label className="productPrice">
-                    {isEmpty(basketItems) ? 0 : subTotal}
-                </label>
+        <>
+            <div className="flexContainer">
+                <div className="flexRow">
+                    <label className="productName">Sub-total</label>
+                    <label className="productPrice">
+                        {isEmpty(basketItems) ? 0 : subTotal}
+                    </label>
+                </div>
             </div>
-            <div className="flexRow">
-                <Savings savingItems={savingItems} />
-                <TotalSaving value={totalSavings} />
-                <TotalToPay totalToPay={totalToPay} />
-            </div>
-        </div>
+
+            <Savings savingItems={savingItems} />
+
+            <TotalSaving value={totalSavings} />
+            <TotalToPay totalToPay={totalToPay} />
+        </>
     )
 }
 

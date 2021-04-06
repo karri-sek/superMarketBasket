@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import SavingItem from '../SavingItem'
 
 const Savings = ({ savingItems }) => (
-    <div className="savingsFlexContainer">
-        <h2 className="savingsHeader">Savings</h2>
+    <div className="flexContainer">
+        <h2 className="flexRowHeading">Savings</h2>
         {savingItems.map((savingItem, index) => (
             <SavingItem key={index} savingItem={savingItem} />
         ))}
